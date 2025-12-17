@@ -374,6 +374,7 @@ func execcmd(comment string, cmd string){
 
     msg := fmt.Sprintf("Exec %s Cmd[%s]", comment, cmd)
     logmsg.Print(logmsg.Info, msg)
+    fmt.Println(msg)
 
     //mycmd := exec.Command(cod)
     mycmd := exec.Command("/bin/zsh", cmd)
@@ -423,12 +424,15 @@ func execDayNight(sunrisecmd string, sunsetcmd string, forcesunset bool, pW *Wea
 
     if(testSunFile("rose")){
       logmsg.Print(logmsg.Info, "Already seen - Skipping SunRise exec")
+      fmt.Println("Already seen - Skipping SunRise exec")
       return
     }
 
     logmsg.Print(logmsg.Info, "1st time we noticed the sun is up");
+    fmt.Println("1st time we noticed the sun is up");
     createSunFile("rose");
     logmsg.Print(logmsg.Info, "Removing Sunset lock marker");
+    fmt.Println("Removing Sunset lock marker");
     deleteSunFile("set");
 
     // if here - running our command!
@@ -443,12 +447,15 @@ func execDayNight(sunrisecmd string, sunsetcmd string, forcesunset bool, pW *Wea
 
     if(testSunFile("set")){
       logmsg.Print(logmsg.Info, "Already seen - Skipping SunSet exec")
+      fmt.Println("Already seen - Skipping SunSet exec")
       return
     }
 
     logmsg.Print(logmsg.Info, "1st time we noticed the sun is down");
+    fmt.Println("1st time we noticed the sun is down");
     createSunFile("set");
     logmsg.Print(logmsg.Info, "Removing Sunrose lock marker");
+    fmt.Println("Removing Sunrose lock marker");
     deleteSunFile("rose");
 
     // if here - running our command!
@@ -465,7 +472,7 @@ func execDayNight(sunrisecmd string, sunsetcmd string, forcesunset bool, pW *Wea
 
 func main() {
 
-  fmt.Println("Sunrise/Sunset control for SecuritySpy")
+  fmt.Println("Test for sunrise and sunset times and then execute passed in commands\n")
 
   logfile := fmt.Sprintf("%s/tmp/sunexec.log", os.Getenv("HOME"))
   configfile := fmt.Sprintf("%s/tmp/.sunexec.conf", os.Getenv("HOME"))
