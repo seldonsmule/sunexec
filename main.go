@@ -1,6 +1,7 @@
 package main
 
 /* simple get sunrise/set info */
+/* do not use if you know what you are doing :) */
 
 import (
         "fmt"
