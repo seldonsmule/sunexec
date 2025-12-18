@@ -378,7 +378,7 @@ func execcmd(comment string, cmd string){
     fmt.Println(msg)
 
     //mycmd := exec.Command(cod)
-    mycmd := exec.Command("/bin/zsh", cmd)
+    mycmd := exec.Command("/bin/bash", cmd)
 
     err := mycmd.Run()
 
