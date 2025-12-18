@@ -341,7 +341,7 @@ func help(){
   fmt.Println("\tExecute sunrise or sunset command if it is near sunset or sunrise");
   fmt.Println("-cmd cronentries -sunrisecmd xxx -sunsetcmd yyy | -cronoutfile filename");
   fmt.Println("\tCreate cron file entries for sunrise and sunset commands");
-  fmt.Println("\t-conroutfile allows the data to be save in a file")
+  fmt.Println("\t-cronoutfile allows the data to be save in a file")
   fmt.Println("-cmd help");
   fmt.Println("\tDisplay this help message");
   
