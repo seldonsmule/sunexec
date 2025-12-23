@@ -431,6 +431,9 @@ func printWeatherFlowTimes(pW *WeatherConf){
 
   fmt.Println("Sunrise: ", timeRise)
   fmt.Println("Sunset: ", timeSet)
+
+  fmt.Printf("RiseSimple %d:%d\n", timeRise.Hour(), timeRise.Minute())
+  fmt.Printf("SetSimple %d:%d\n", timeSet.Hour(), timeSet.Minute())
 }
 
 func execcmd(comment string, cmd string){
